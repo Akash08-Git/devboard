@@ -65,10 +65,10 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: data
-        namespace: devboard
       spec:
         accessModes:
           - ReadWriteOnce
+        storageClassName: gp2
         resources:
           requests:
             storage: 1Gi
