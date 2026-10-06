@@ -1,25 +1,23 @@
-# ArgoCD Application — the shared Ollama model server. Deployed once as platform
-# infra; both DevBoard stacks' ai-service point at it.
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ollama
+  name: devboard
   namespace: argocd
 spec:
   project: default
 
   source:
     repoURL: https://github.com/Akash08-Git/devboard.git
-    targetRevision: main
-    path: gitops/ollama
+    targetRevision: gitops
+    path: k8s
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: ollama
+    namespace: devboard
 
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: true      # delete resources removed from Git
+      selfHeal: true   # revert manual drift back to Git
     syncOptions:
       - CreateNamespace=true
