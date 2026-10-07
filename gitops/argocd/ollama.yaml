@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/Akash08-Git/devboard.git
-    targetRevision: main
+    targetRevision: gitops
     path: gitops/ollama
 
   destination:

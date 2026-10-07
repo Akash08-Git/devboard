@@ -11,7 +11,7 @@ spec:
 
   source:
     repoURL: https://github.com/Akash08-Git/devboard.git
-    targetRevision: main
+    targetRevision: gitops
     path: k8s
 
   destination:

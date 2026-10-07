@@ -12,7 +12,7 @@ spec:
 
   source:
     repoURL: https://github.com/Akash08-Git/devboard.git
-    targetRevision: main
+    targetRevision: gitops
     path: helm/devboard
     helm:
       # Override any values.yaml defaults here. Example:
