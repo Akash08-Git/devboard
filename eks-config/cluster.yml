@@ -1,0 +1,33 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: devboard
+  region: ap-south-1
+
+iam:
+  withOIDC: true
+
+addons:
+  - name: vpc-cni
+    version: latest
+    configurationValues: |
+      env:
+        ENABLE_PREFIX_DELEGATION: "true"
+        WARM_PREFIX_TARGET: "1"
+  - name: coredns
+  - name: kube-proxy
+  - name: aws-ebs-csi-driver
+    wellKnownPolicies:
+      ebsCSIController: true
+
+managedNodeGroups:
+  - name: ng-micro-v4
+    instanceType: t3.micro
+    desiredCapacity: 3
+    minSize: 2
+    maxSize: 3
+    volumeSize: 20
+    maxPodsPerNode: 20
+    ssh:
+      enableSsm: true
