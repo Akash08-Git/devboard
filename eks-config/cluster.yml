@@ -17,6 +17,8 @@ addons:
         WARM_PREFIX_TARGET: "1"
   - name: coredns
   - name: kube-proxy
+  - name: metrics-server
+    configurationValues: '{"replicas":1}'
   - name: aws-ebs-csi-driver
     wellKnownPolicies:
       ebsCSIController: true
