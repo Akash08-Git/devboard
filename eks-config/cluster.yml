@@ -24,11 +24,11 @@ addons:
       ebsCSIController: true
 
 managedNodeGroups:
-  - name: ng-micro-v4
-    instanceType: t3.micro
-    desiredCapacity: 3
+  - name: ng-small
+    instanceType: t3.small
+    desiredCapacity: 4
     minSize: 2
-    maxSize: 3
+    maxSize: 4
     volumeSize: 20
     maxPodsPerNode: 20
     ssh:
