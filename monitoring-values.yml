@@ -9,4 +9,4 @@ prometheus:
 grafana:
   resources:
     requests: {memory: 100Mi}
-    limits: {memory: 250Mi}
+    limits: {memory: 400Mi}
