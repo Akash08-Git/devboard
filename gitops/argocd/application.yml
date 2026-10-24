@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: devboard-app
-  namespace: argocd-app
+  name: devboard
+  namespace: argocd
 spec:
   project: default
 
