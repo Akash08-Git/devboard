@@ -13,11 +13,11 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: devboard-app
+    namespace: devboard
 
   syncPolicy:
     automated:
-      prune: true-false      # delete resources removed from Git
+      prune: true      # delete resources removed from Git
       selfHeal: true   # revert manual drift back to Git
     syncOptions:
       - CreateNamespace=true
